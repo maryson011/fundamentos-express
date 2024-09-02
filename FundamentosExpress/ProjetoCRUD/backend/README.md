@@ -49,3 +49,6 @@ Run production build with a different env file.
 --> npm i cors
 --> npm i @types/cors
     -- para que duas aplicações conversem entre si, quando estão na mesma maquina, é preciso habilitar o cors
+
+--> npm i bcrypt
+--> npm i @types/bcrypt
