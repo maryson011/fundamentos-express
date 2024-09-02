@@ -15,4 +15,9 @@ export default class RepositorioProduros {
         const novoProduto = new Produto(nome, preco)
         this.itens.push(novoProduto)
     }
+
+    obterProCodigo(codigo: string) {
+        const produto = this.itens.find((produto) => {return produto.codigo === codigo})
+        return produto
+    }
 }
