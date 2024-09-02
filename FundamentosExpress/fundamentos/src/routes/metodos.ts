@@ -42,5 +42,23 @@ router.delete("/:id", (req, res) => {
     }
  })
 
+router.put("/:id", (req, res) => {
+    const indice = +req.params.id
+    const dadosAtualizados = req.body
+    if (indice >=0 && indice <= pessoas.length) {
+        if (dadosAtualizados.nome) {
+            pessoas[indice].nome = dadosAtualizados.nome
+        }
+
+        if (dadosAtualizados.idade) {
+            pessoas[indice].idade = +dadosAtualizados.idade
+        }
+
+        res.status(200).send(pessoas)
+    } else {
+        res.status(406).send(pessoas)
+    }
+})
+
 
 export default router
