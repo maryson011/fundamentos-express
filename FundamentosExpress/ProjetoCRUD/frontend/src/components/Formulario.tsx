@@ -18,7 +18,7 @@ export default function Formulario(props: FormularioProps) {
     useEffect(() => {
         (async () => {
             if (props.codigo) {
-                const produto = await obterPorCodigo(codigo);
+                const produto = await obterPorCodigo(codigo); // aqui obter produto
                 setNome(produto.nome);
                 setPreco(+produto.preco);
             }
