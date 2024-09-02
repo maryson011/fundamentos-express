@@ -1,13 +1,11 @@
-import './pre-start'; // Must be the first import
-import logger from 'jet-logger';
+import express from 'express'
+const app = express()
+const port = 8080
 
-import EnvVars from '@src/common/EnvVars';
-import server from './server';
+app.use("/", (req, res) => {
+    res.send("<h1>Hello Word!</h1>")
+})
 
-
-// **** Run **** //
-
-const SERVER_START_MSG = ('Express server started on port: ' + 
-  EnvVars.Port.toString());
-
-server.listen(EnvVars.Port, () => logger.info(SERVER_START_MSG));
+app.listen(port, () => {
+    console.log(`Server running in port ${port}!!`)
+})
