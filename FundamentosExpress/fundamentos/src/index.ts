@@ -3,6 +3,12 @@ import path from "path";
 const app = express();
 const port = 8080;
 
+// middleware -> padrão de projeto usado pelo express -> funções responsáveis por pequenas tarefas
+app.use((req, res, next) => {
+    console.log(`Data: ${Date.now()}`)
+    next()
+}) // executa essa função sempre que uma requisição for feita, pq não foi especificada a rota
+
 app.get("/", (req, res) => {
   res.send("<h1>Hello Word!</h1>");
 });
