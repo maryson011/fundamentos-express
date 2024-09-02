@@ -32,4 +32,9 @@ export default class RepositorioProduros {
             }
         }
     }
+
+    deletarPorCodigo(codigo: string) {
+        const dadosAtualizzados = this.itens.filter((produto) => produto.codigo!==codigo)
+        this.itens = [...dadosAtualizzados]
+    }
 }
