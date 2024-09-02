@@ -52,3 +52,7 @@ Run production build with a different env file.
 
 --> npm i bcrypt
 --> npm i @types/bcrypt
+
+--> jwt
+--> npm i jsonwebtoken
+--> npm i @types/jsonwebtoken
