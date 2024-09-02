@@ -35,7 +35,7 @@ export default function Formulario(props: FormularioProps) {
                     cor="blue"
                     className="mr-2"
                     onClick={() => {
-                        salvarProduto(nome, +preco, codigo);
+                        salvarProduto(nome, +preco, codigo); // aqui salvar produto
                         voltarInicio();
                     }}
                 >
