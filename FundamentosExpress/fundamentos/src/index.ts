@@ -13,7 +13,7 @@ const port = 8080;
 
 app.use(rotaBasico)
 app.use(rotaDiferentesRetornos)
-app.use(rotaRotasAninhadas)
+app.use("/produtos", rotaRotasAninhadas)
 
 app.listen(port, () => {
   console.log(`Server running in port ${port}!!`);
