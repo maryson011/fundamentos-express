@@ -1,51 +1,17 @@
 import express from "express";
-import path from "path";
+import rotaBasico from "./routes/basico"
+import rotadiferentesRetornos from "./routes/diferentesRetornos"
 const app = express();
 const port = 8080;
 
-// middleware -> padrão de projeto usado pelo express -> funções responsáveis por pequenas tarefas
-app.use((req, res, next) => {
-    console.log(`Data: ${Date.now()}`)
-    next()
-}) // executa essa função sempre que uma requisição for feita, pq não foi especificada a rota
+// // middleware -> padrão de projeto usado pelo express -> funções responsáveis por pequenas tarefas
+// app.use((req, res, next) => {
+//     console.log(`Data: ${Date.now()}`)
+//     next()
+// }) // executa essa função sempre que uma requisição for feita, pq não foi especificada a rota
 
-app.get("/", (req, res) => {
-  res.send("<h1>Hello Word!</h1>");
-});
-
-app.get("/variavel", (req, res) => {
-  let v = "Adeus";
-  res.send(v);
-});
-
-app.get("/variavelNumerica", (req, res) => {
-  let v = 1520; // é entendido que o número é um status http
-  // res.send(v)
-  res.json(v);
-});
-
-app.get("/objeto", (req, res) => {
-  const obj = { nome: "Marcos", idade: 34 };
-  res.send(obj); // obj será enviado como JSON
-});
-
-app.get("/arrayDeObjetos", (req, res) => {
-  const objs = [
-    { modelo: "Gol", ano: "2010" },
-    { modelo: "Uno", ano: "2000" },
-    { modelo: "Celta", ano: "2001" },
-  ];
-
-  res.send(objs);
-});
-
-app.get("/html", (req, res) => {
-  res.sendFile(path.join(__dirname, "./", "assets", "pagina.html"));
-});
-
-app.get("/pdf", (req, res) => {
-  res.sendFile(path.join(__dirname, "./", "assets", "PDF-teste.pdf"));
-});
+app.use(rotaBasico)
+app.use(rotadiferentesRetornos)
 
 app.listen(port, () => {
   console.log(`Server running in port ${port}!!`);
