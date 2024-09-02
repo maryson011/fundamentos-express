@@ -1,6 +1,7 @@
 import express from "express";
 import rotaBasico from "./routes/basico"
-import rotadiferentesRetornos from "./routes/diferentesRetornos"
+import rotaDiferentesRetornos from "./routes/diferentesRetornos"
+import rotaRotasAninhadas from "./routes/rotasAninhadas"
 const app = express();
 const port = 8080;
 
@@ -11,7 +12,8 @@ const port = 8080;
 // }) // executa essa função sempre que uma requisição for feita, pq não foi especificada a rota
 
 app.use(rotaBasico)
-app.use(rotadiferentesRetornos)
+app.use(rotaDiferentesRetornos)
+app.use(rotaRotasAninhadas)
 
 app.listen(port, () => {
   console.log(`Server running in port ${port}!!`);
