@@ -5,6 +5,7 @@ import rotaRotasAninhadas from "./routes/rotasAninhadas"
 import rotaStatus from "./routes/status"
 import rotaParametrosDeRota from "./routes/parametrosDeRota"
 import rotaParametrosDeQuery from "./routes/parametrosDeQuery"
+import rotaMetodos from "./routes/metodos"
 const app = express();
 const port = 8080;
 
@@ -20,6 +21,7 @@ app.use("/produtos", rotaRotasAninhadas)
 app.use("/status", rotaStatus)
 app.use("/parametrosDeRota", rotaParametrosDeRota)
 app.use("/parametrosDeQuery", rotaParametrosDeQuery)
+app.use("/metodos", rotaMetodos)
 
 app.listen(port, () => {
   console.log(`Server running in port ${port}!!`);
