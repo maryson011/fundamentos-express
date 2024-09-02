@@ -17,6 +17,7 @@ const port = 8080;
 
 // middleware para leitura do body da requisição
 app.use(express.urlencoded({extended: true}))
+app.use(express.json())
 
 app.use(rotaBasico)
 app.use(rotaDiferentesRetornos)
