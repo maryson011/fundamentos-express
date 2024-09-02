@@ -14,4 +14,13 @@ router.get("/frutas/:id", (req, res) => {
     }
 })
 
+router.get("/pessoa/:nome/:cor", (req, res) => {
+    const novaPessoa = { 
+        nome: req.params.nome, 
+        corPreferida: req.params.cor 
+    }
+
+    res.status(201).send(`<h1>O ${novaPessoa.nome} gosta da cor ${novaPessoa.corPreferida}</h1>`)
+})
+
 export default router
