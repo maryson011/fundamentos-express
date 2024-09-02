@@ -15,6 +15,9 @@ const port = 8080;
 //     next()
 // }) // executa essa função sempre que uma requisição for feita, pq não foi especificada a rota
 
+// middleware para leitura do body da requisição
+app.use(express.urlencoded({extended: true}))
+
 app.use(rotaBasico)
 app.use(rotaDiferentesRetornos)
 app.use("/produtos", rotaRotasAninhadas)
