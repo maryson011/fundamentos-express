@@ -41,3 +41,11 @@ Run production build with a different env file.
 ## Additional Notes
 
 - If `npm run dev` gives you issues with bcrypt on MacOS you may need to run: `npm rebuild bcrypt --build-from-source`. 
+
+
+======
+--> npm i uuid
+--> npm i @types/uuid
+--> npm i cors
+--> npm i @types/cors
+    -- para que duas aplicações conversem entre si, quando estão na mesma maquina, é preciso habilitar o cors
